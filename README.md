@@ -3,7 +3,7 @@ Monocular depth estimation
 
 This repo is a Pytorch implementation of depth estimation that allows some plug-and-play style flexibility in the model (in particular, encoder, decoder and loss function) through changing command-line arguments. It is also straightforward to add more custom options.
 
-The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dense), although the implementation is different from the paper.
+The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dense), although the implementation is different from the paper as we are not introducing any sparse samples.
 
 ## Contents
 0. [Requirements](#requirements)
