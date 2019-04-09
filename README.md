@@ -41,6 +41,12 @@ For instance, run the following command to train a network with ResNet50 as the 
 python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
+In summary, this code allows
+```bash
+python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
+```
+It is of course possible to add new options to this.
+
 Training results will be saved under the `results` folder. To resume a previous training, run
 ```bash
 python3 main.py --resume [path_to_previous_model]
