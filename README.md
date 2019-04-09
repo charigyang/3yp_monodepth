@@ -29,7 +29,7 @@ This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
 	cd ..
 	```
 	
-- CARLA Dataset is an original dataset I made while driving in CARLA driving simulator (http://carla.org/). Some samples are available [here](https://drive.google.com/open?id=1y06fdYojxuADoHCBzkSUZXVKrx8MLlBm).
+- CARLA Dataset is an original dataset I made while driving in CARLA driving simulator (http://carla.org/). Some samples are available [here](https://drive.google.com/open?id=1y06fdYojxuADoHCBzkSUZXVKrx8MLlBm), and is probably irrelevant for 3yp.
 ## Training
 The training scripts come with several options, which can be listed with the `--help` flag. 
 ```bash
