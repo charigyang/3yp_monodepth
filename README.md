@@ -60,7 +60,8 @@ To test the performance of a trained model without training, simply run main.py 
 python3 main.py --evaluate [path_to_trained_model]
 ```
 
-
+TODO:
+plug in optional tensorboard
 
 
 
