@@ -47,7 +47,7 @@ python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} 
 ```
 It is of course possible to add new options to this.
 
-You can also very hyperparameters such as number of epochs, batch size, learning rate, momentum and weight decay through command-line arguments. See `--help` for the full set of options.
+You can also vary hyperparameters such as number of epochs, batch size, learning rate, momentum and weight decay through command-line arguments. See `--help` for the full set of options.
 
 Training results will be saved under the `results` folder. To resume a previous training, run
 ```bash
