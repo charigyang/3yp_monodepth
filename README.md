@@ -28,15 +28,17 @@ This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
  	tar -xvf kitti.tar.gz && rm -f kitti.tar.gz
 	cd ..
 	```
+	
+- CARLA Dataset is an original dataset I made while driving in CARLA driving simulator (http://carla.org/). Some samples are available [here](https://drive.google.com/open?id=1y06fdYojxuADoHCBzkSUZXVKrx8MLlBm).
 ## Training
 The training scripts come with several options, which can be listed with the `--help` flag. 
 ```bash
 python3 main.py --help
 ```
 
-For instance, run the following command to train a network with ResNet50 as the encoder, deconvolutions of kernel size 3 as the decoder for NYU V2 dataset
+For instance, run the following command to train a network with ResNet50 as the encoder, deconvolutions of kernel size 3 as the decoder and l1 loss for NYU V2 dataset. These three arguments can of course be varied.
 ```bash
-python3 main.py -a resnet50 -d deconv3 --data nyudepthv2
+python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
 Training results will be saved under the `results` folder. To resume a previous training, run
