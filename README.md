@@ -11,7 +11,7 @@ The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dens
 0. [Testing](#testing)
 
 ## Requirements
-This code was tested with Python 3 and PyTorch 0.4.0.
+This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
 - Install [PyTorch](http://pytorch.org/) on a machine with CUDA GPU.
 - Install the [HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) and other dependencies (files in our pre-processed datasets are in HDF5 formats).
 	```bash
