@@ -24,7 +24,7 @@ def weights_init(m):
 class Decoder(nn.Module):
     # Decoder is the base class for all decoders
 
-    names = ['deconv2', 'deconv3', 'upconv', 'upproj']
+    names = ['deconv2', 'deconv3']
 
     def __init__(self):
         super(Decoder, self).__init__()

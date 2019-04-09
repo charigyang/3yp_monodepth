@@ -122,7 +122,7 @@ def main():
 
         model = torch.nn.DataParallel(model).cuda() # for multi-gpu training
 
-    # define loss function (criterion) and optimizer
+    # define loss function (criterion)
     if args.criterion == 'l2':
         criterion = criteria.MaskedMSELoss().cuda()
     elif args.criterion == 'l1':
