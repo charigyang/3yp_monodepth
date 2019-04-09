@@ -61,7 +61,5 @@ python3 main.py --evaluate [path_to_trained_model]
 ```
 
 TODO:
-plug in optional tensorboard
-
-
-
+plug in optional tensorboard // update readme accordingly
+allow data to be anywhere // update readme accordingly
