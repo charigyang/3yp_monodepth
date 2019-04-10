@@ -43,11 +43,11 @@ For instance, run the following command to train a network with ResNet50 as the 
 python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
-In summary, this code allows
+In summary, this code supports
 ```bash
 python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
 ```
-It is of course possible to add new options to this.
+It is of course possible to add more options to this implementation.
 
 You can also vary hyperparameters such as number of epochs, batch size, learning rate, momentum and weight decay through command-line arguments. See `--help` for the full set of options.
 
