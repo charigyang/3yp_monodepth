@@ -44,7 +44,7 @@ For instance, run the following command to train a network with ResNet50 as the 
 python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
-## Adding Componenets
+## Adding Components
 In summary, this code supports
 ```bash
 python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
