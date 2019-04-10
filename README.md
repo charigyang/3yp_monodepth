@@ -45,7 +45,7 @@ python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
 
-##Adding Componenets
+## Adding Componenets
 
 In summary, this code supports
 ```bash
