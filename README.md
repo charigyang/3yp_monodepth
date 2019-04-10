@@ -8,6 +8,7 @@ The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dens
 ## Contents
 0. [Requirements](#requirements)
 0. [Training](#training)
+0. [Results](#results)
 0. [Testing](#testing)
 
 ## Requirements
@@ -50,9 +51,16 @@ It is of course possible to add new options to this.
 
 You can also vary hyperparameters such as number of epochs, batch size, learning rate, momentum and weight decay through command-line arguments. See `--help` for the full set of options.
 
-Training results will be saved under the `results` folder. To resume a previous training, run
+
+
+## Results
+Results are automatically tracked every epoch in both Tensorboard and in a csv file. Training results will be saved under the `results` folder. To resume a previous training, run
 ```bash
 python3 main.py --resume [path_to_previous_model]
+```
+To run tensorboard, run
+```bash
+tensorboard --logdir=tensorboardresults/[model]
 ```
 
 ## Testing
@@ -60,7 +68,3 @@ To test the performance of a trained model without training, simply run main.py 
 ```bash
 python3 main.py --evaluate [path_to_trained_model]
 ```
-
-TODO:
-plug in optional tensorboard // update readme accordingly
-allow data to be anywhere // update readme accordingly
