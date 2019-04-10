@@ -47,7 +47,7 @@ In summary, this code supports
 ```bash
 python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
 ```
-It is of course possible to add more options to this implementation.
+It is of course possible to add more options to this implementation. For example, if you want to try [Fully Convolutional Residual Networks](https://arxiv.org/abs/1606.00373) which uses -a resnet50, -d upproj, -c berhu, you can add the up-projection layers and berhu loss into the appropriate parts in the file, and run them accordingly.
 
 You can also vary hyperparameters such as number of epochs, batch size, learning rate, momentum and weight decay through command-line arguments. See `--help` for the full set of options.
 
