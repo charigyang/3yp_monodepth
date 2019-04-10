@@ -12,14 +12,13 @@ This repo is a Pytorch implementation of depth estimation that allows plug-and-p
 
 ## Requirements
 This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
-- Install [PyTorch](http://pytorch.org/) on a machine with CUDA GPU.
-- Install the [HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) and other dependencies (files in our pre-processed datasets are in HDF5 formats).
+- Install [PyTorch](http://pytorch.org/) on a machine with CUDA GPU. This code does not support CPU at the moment.
 	```bash
 	sudo apt-get update
 	sudo apt-get install -y libhdf5-serial-dev hdf5-tools
-	pip3 install h5py matplotlib imageio scikit-image opencv-python
+	pip3 install h5py matplotlib imageio scikit-image opencv-python tensorboardX
 	```
-- Download the preprocessed [NYU Depth V2](http://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) and/or [KITTI Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) dataset in HDF5 formats, and place them under the `data` folder. The downloading process might take an hour or so. The NYU dataset requires 32G of storage space, and KITTI requires 81G.
+- Download the preprocessed [NYU Depth V2](http://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) and/or [KITTI Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) dataset in HDF5 formats, and place them under the `data` folder. The NYU dataset requires 32G of storage space, and KITTI requires 81G.
 	```bash
 	cd .. #data directory should be in the same level as monodepth_pytorch directory!
 	mkdir data; cd data
@@ -30,7 +29,8 @@ This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
 	cd ..
 	```
 	
-- CARLA Dataset is an original dataset I gathered while driving in CARLA driving simulator (http://carla.org/). There are ~10k photos recorded across 5 maps. The splitted (80:20) data is available [here](https://drive.google.com/open?id=145_-KAQVKYeKWtoL2Z8pmMypdVD7xDdn) (7.2GB).
+- CARLA Dataset is an original dataset I gathered while driving in CARLA driving simulator (http://carla.org/). There are ~10k photos recorded across 5 maps. The splitted (80:20) data is available [here](https://drive.google.com/open?id=145_-KAQVKYeKWtoL2Z8pmMypdVD7xDdn) (7.2GB). You can add it to the data folder and untar it.
+
 ## Training
 The training scripts come with several options, which can be listed with the `--help` flag. 
 ```bash
