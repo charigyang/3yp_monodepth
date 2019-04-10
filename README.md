@@ -8,7 +8,7 @@ The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dens
 ## Contents
 0. [Requirements](#requirements)
 0. [Training](#training)
-0. [Adding components](#adding components)
+0. [Adding components](#adding)
 0. [Results](#results)
 0. [Testing](#testing)
 
