@@ -1,4 +1,4 @@
-Plug-and-play architecture for monocular depth estimation
+Plug-and-play architecture for mono depth estimation
 ============================
 
 This repo is a Pytorch implementation of depth estimation that allows plug-and-play style flexibility in the model (in particular, encoder, decoder and loss function) through changing command-line arguments. It is also straightforward to add more custom options.
