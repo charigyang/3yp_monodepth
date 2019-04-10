@@ -21,6 +21,7 @@ This code was tested with Python 3.7, PyTorch 1.0.1, and CUDA 9.0.
 	```
 - Download the preprocessed [NYU Depth V2](http://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) and/or [KITTI Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) dataset in HDF5 formats, and place them under the `data` folder. The downloading process might take an hour or so. The NYU dataset requires 32G of storage space, and KITTI requires 81G.
 	```bash
+	cd .. #data directory should be in the same level as monodepth_pytorch directory!
 	mkdir data; cd data
 	wget http://datasets.lids.mit.edu/sparse-to-dense/data/nyudepthv2.tar.gz
 	tar -xvf nyudepthv2.tar.gz && rm -f nyudepthv2.tar.gz
