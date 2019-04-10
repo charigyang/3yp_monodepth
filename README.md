@@ -8,7 +8,7 @@ The code skeleton is adapted from (https://github.com/fangchangma/sparse-to-dens
 ## Contents
 0. [Requirements](#requirements)
 0. [Training](#training)
-0. [Adding components](#adding)
+0. [Adding components](#adding_components)
 0. [Results](#results)
 0. [Testing](#testing)
 
@@ -44,9 +44,7 @@ For instance, run the following command to train a network with ResNet50 as the 
 python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 ```
 
-
 ## Adding Componenets
-
 In summary, this code supports
 ```bash
 python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
