@@ -84,14 +84,9 @@ class ResNet(nn.Module):
         super(ResNet, self).__init__()
         pretrained_model = torchvision.models.__dict__['resnet{}'.format(layers)](pretrained=pretrained)
 
-        if in_channels == 3:
-            self.conv1 = pretrained_model._modules['conv1']
-            self.bn1 = pretrained_model._modules['bn1']
-        else:
-            self.conv1 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
-            self.bn1 = nn.BatchNorm2d(64)
-            weights_init(self.conv1)
-            weights_init(self.bn1)
+
+        self.conv1 = pretrained_model._modules['conv1']
+        self.bn1 = pretrained_model._modules['bn1']
 
         self.output_size = output_size
 
@@ -126,7 +121,7 @@ class ResNet(nn.Module):
         self.conv3.apply(weights_init)
 
     def forward(self, x):
-        # resnet
+        # resnet encoder
         x = self.conv1(x)
         x = self.bn1(x)
         x = self.relu(x)
@@ -135,10 +130,10 @@ class ResNet(nn.Module):
         x = self.layer2(x)
         x = self.layer3(x)
         x = self.layer4(x)
-
+        # still encoder, but not pretrained
         x = self.conv2(x)
         x = self.bn2(x)
-
+        
         # decoder
         x = self.decoder(x)
         x = self.conv3(x)

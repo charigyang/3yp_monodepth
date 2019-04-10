@@ -12,6 +12,7 @@ from models import ResNet
 from metrics import AverageMeter, Result
 import criteria
 import utils
+from tensorboardX import SummaryWriter #tensorboard --logdir=name & 
 
 args = utils.parse_command()
 print(args)
@@ -25,8 +26,8 @@ best_result.set_to_worst()
 def create_data_loaders(args):
     # Data loading code
     print("=> creating data loaders ...")
-    traindir = os.path.join('data', args.data, 'train')
-    valdir = os.path.join('data', args.data, 'val')
+    traindir = os.path.join('../data', args.data, 'train')
+    valdir = os.path.join('../data', args.data, 'val')
     train_loader = None
     val_loader = None
 
@@ -132,7 +133,8 @@ def main():
     output_directory = utils.get_output_directory(args)
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-
+    global tbwriter
+    tbwriter = SummaryWriter('tensorboard' + str(output_directory))
     train_csv = os.path.join(output_directory, 'train.csv')
     test_csv = os.path.join(output_directory, 'test.csv')
     best_txt = os.path.join(output_directory, 'best.txt')
@@ -217,6 +219,13 @@ def train(train_loader, model, criterion, optimizer, epoch):
             'mae': avg.mae, 'delta1': avg.delta1, 'delta2': avg.delta2, 'delta3': avg.delta3,
             'gpu_time': avg.gpu_time, 'data_time': avg.data_time})
 
+    #tensorboard
+    tbwriter.add_scalar('rmse_train', avg.rmse, epoch)
+    tbwriter.add_scalar('absrel_train', avg.absrel, epoch)
+    tbwriter.add_scalar('delta1_train' ,avg.delta1, epoch)
+    tbwriter.add_scalar('delta2_train' ,avg.delta2, epoch)
+    tbwriter.add_scalar('delta3_train' ,avg.delta3, epoch)
+
 def validate(val_loader, model, epoch, write_to_file=True):
     average_meter = AverageMeter()
     model.eval() # switch to evaluate mode
@@ -278,6 +287,13 @@ def validate(val_loader, model, epoch, write_to_file=True):
             writer.writerow({'mse': avg.mse, 'rmse': avg.rmse, 'absrel': avg.absrel, 'lg10': avg.lg10,
                 'mae': avg.mae, 'delta1': avg.delta1, 'delta2': avg.delta2, 'delta3': avg.delta3,
                 'data_time': avg.data_time, 'gpu_time': avg.gpu_time})
+
+    #tensorboard
+    tbwriter.add_scalar('rmse_val', avg.rmse, epoch)
+    tbwriter.add_scalar('absrel_val', avg.absrel, epoch)
+    tbwriter.add_scalar('delta1_val' ,avg.delta1, epoch)
+    tbwriter.add_scalar('delta2_val' ,avg.delta2, epoch)
+    tbwriter.add_scalar('delta3_val' ,avg.delta3, epoch)
     return avg, img_merge
 
 if __name__ == '__main__':
