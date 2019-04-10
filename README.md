@@ -44,8 +44,8 @@ python3 main.py -a resnet50 -d deconv3 -c l1 --data nyudepthv2
 
 ## Adding Components
 In summary, this code supports
-```bash
-python3 main.py -a {resnet18 or resnet50} -d {deconv2 or deconv3} -c {l1 or l2} --data {nyudepthv2 or kitti or carla}
+```bash\
+python3 main.py -a {resnet18|resnet50} -d {deconv2|deconv3} -c {l1|l2} --data {nyudepthv2|kitti|carla}
 ```
 It is of course possible to add more options to this implementation. For example, if you want to try [Fully Convolutional Residual Networks](https://arxiv.org/abs/1606.00373) by Laina et al. which uses -a resnet50, -d upproj, -c berhu, you can add the up-projection layers and berhu loss into the appropriate parts in the file, and run them accordingly.
 
